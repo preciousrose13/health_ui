@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:get/get.dart';
 import 'package:health/Resources/AppColors/app_colors.dart';
-import 'package:health/View/Designation%20Registration/designation.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -49,22 +47,6 @@ class MyDrawer extends StatelessWidget {
               FirebaseAuth.instance.signOut();
             },
           ),
-
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: ElevatedButton(
-              
-              onPressed: () {
-                Get.to(Designation());
-              }, 
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(MyColors.purple),
-              ),
-              child: Text("Join As Service Provider",
-              style: TextStyle(color: Colors.white, fontSize: 16,)),
-          ),
-
-      ),
       ],
       ),
     );

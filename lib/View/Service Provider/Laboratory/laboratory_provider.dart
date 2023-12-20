@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:health/Resources/AppBar/app_bar.dart';
-import 'package:health/Resources/Crousal_slider/slider_user.dart';
-import 'package:health/Resources/Drawer/drawer.dart';
+import 'package:health/Resources/Requests/provider_completed_reqs.dart';
+import 'package:health/Resources/Requests/provider_requests.dart';
 import 'package:health/Resources/Search_bar/search_bar.dart';
-import 'package:health/Resources/Requests/user_requests.dart';
 
-class HomePage extends StatelessWidget {
+class Laboratory_Provider extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: MyAppBar(),
-
-      endDrawer: MyDrawer(),
 
       body: Padding(
         padding: EdgeInsets.all(16.0),
@@ -20,26 +18,32 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              MySearchBar(),
-              
-              SizedBox(height: 20),
-              
+
               Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Our Services:',
+                    "Laboratory Service Provider",
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
               ),
 
-              CarouselExample(),
+              SizedBox(
+                height: 20,
+              ),
 
-              Requests(),
+              MySearchBar(),
+              
+              SizedBox(height: 20),
+
+              Provider_Requests(),
+
+              Provider_Completed_Requests()
+
             ],
           ),
         ),
